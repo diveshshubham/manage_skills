@@ -162,7 +162,7 @@ This endpoint edits skills
 
 ### HTTP Request
 
-`POST http://localhost:8086/skill/editSkills/{skill_user_id}`
+`PUT http://localhost:8086/skill/editSkills/{skill_user_id}`
 
 ## Get skills by userId
 
@@ -399,6 +399,44 @@ This endpoint will register a admin
 
 `POST http://localhost:8086/admin/register`
 
+## Add selfassesment
+
+> add assesment
+
+```json
+{
+  "adminData": {
+    "_id": "62d56e5bbe51d8b73b0157f1",
+    "adminName": "admin",
+    "email": "shubham@gil.com",
+    "password": "202cb962ac59075b964b07152d234b70",
+    "updatedAt": "2022-07-18T14:29:47.175Z",
+    "createdAt": "2022-07-18T14:29:47.175Z",
+    "__v": 0
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDU2ZTViYmU1MWQ4YjczYjAxNTdmMSIsImlhdCI6MTY1ODE1NDY2NSwiZXhwIjoxNjg5NjkwNjY1fQ.6UXTcOegM1RH5yoJX0Kg_4-CW7K3IKm88sugA4tWqW0"
+}
+```
+
+### BODY Parameters
+
+| Parameter         | Type    | Required | Description |
+| ----------------- | ------- | -------- | ----------- |
+| assignId          | String  | Yes      |             |
+| skillId           | String  | Yes      |             |
+| levelId           | String  | Yes      |             |
+| isCompleted       | Boolean | Yes      |             |
+| profiencyScored   | Number  | Yes      |             |
+| numberOfAssesment | Number  | Yes      |             |
+
+Authentication Required : YES
+
+This endpoint will login a admin
+
+### HTTP Request
+
+`POST http://localhost:8086/assesment/addAssesment`
+
 ## Register login
 
 > register login
@@ -542,38 +580,38 @@ This endpoint will get skills by admin
 
 ```json
 {
-    "data": [
-        {
-            "_id": "62d2e026bf3089b80aba2401",
-            "level": "BEGINNER",
-            "updatedAt": "2022-07-18T15:10:11.725Z",
-            "createdAt": "2022-07-18T15:10:11.725Z"
-        },
-        {
-            "_id": "62d2e076bf3089b80aba2402",
-            "level": "ADVANCE",
-            "updatedAt": "2022-07-18T15:10:11.725Z",
-            "createdAt": "2022-07-18T15:10:11.725Z"
-        },
-        {
-            "_id": "62d2e07fbf3089b80aba2403",
-            "level": "MASTER",
-            "updatedAt": "2022-07-18T15:10:11.725Z",
-            "createdAt": "2022-07-18T15:10:11.725Z"
-        },
-        {
-            "_id": "62d2e090bf3089b80aba2404",
-            "level": "EXPERT",
-            "updatedAt": "2022-07-18T15:10:11.726Z",
-            "createdAt": "2022-07-18T15:10:11.726Z"
-        },
-        {
-            "_id": "62d2e09dbf3089b80aba2405",
-            "level": "STAR",
-            "updatedAt": "2022-07-18T15:10:11.726Z",
-            "createdAt": "2022-07-18T15:10:11.726Z"
-        }
-    ]
+  "data": [
+    {
+      "_id": "62d2e026bf3089b80aba2401",
+      "level": "BEGINNER",
+      "updatedAt": "2022-07-18T15:10:11.725Z",
+      "createdAt": "2022-07-18T15:10:11.725Z"
+    },
+    {
+      "_id": "62d2e076bf3089b80aba2402",
+      "level": "ADVANCE",
+      "updatedAt": "2022-07-18T15:10:11.725Z",
+      "createdAt": "2022-07-18T15:10:11.725Z"
+    },
+    {
+      "_id": "62d2e07fbf3089b80aba2403",
+      "level": "MASTER",
+      "updatedAt": "2022-07-18T15:10:11.725Z",
+      "createdAt": "2022-07-18T15:10:11.725Z"
+    },
+    {
+      "_id": "62d2e090bf3089b80aba2404",
+      "level": "EXPERT",
+      "updatedAt": "2022-07-18T15:10:11.726Z",
+      "createdAt": "2022-07-18T15:10:11.726Z"
+    },
+    {
+      "_id": "62d2e09dbf3089b80aba2405",
+      "level": "STAR",
+      "updatedAt": "2022-07-18T15:10:11.726Z",
+      "createdAt": "2022-07-18T15:10:11.726Z"
+    }
+  ]
 }
 ```
 
